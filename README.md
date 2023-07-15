@@ -1,5 +1,9 @@
 # angular_playground
 
-Created this repo for all the angular play arounds
-create a branch from main branch for all the play arounds
-dont touch on main branch
+# installing angular material
+https://material.angular.io/guide/getting-started
+
+ng add @angular/material-> thi swill install angular material and save the package in package.json
+
+# mat tool tip documentation
+https://material.angular.io/components/tooltip/overview
