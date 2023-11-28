@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
     chat gpt chat for this solution
     https://chat.openai.com/share/a232e4c4-c8e8-4a1f-9826-2506855326ac 
   */
+    title = 'Sample title';
   constructor(private http: HttpClient) { }
   ngOnInit() {
     /* this.getProducts().subscribe({
@@ -48,12 +49,12 @@ export class AppComponent implements OnInit {
 
 
   yourApiCall() {
-    this.http.get('your_api_url')
+    this.http.get('https://fakestosreapi.com/products/1')
       .pipe(
-        catchError((error: any) => {
-          alert('error');
-          return of(null); // Emitting null to proceed to finalize
-        }),
+        // catchError((error: any) => {
+        //   alert('error');
+        //   return of(null); // Emitting null to proceed to finalize
+        // }),
         finalize(() => {
           alert('final');
         })
