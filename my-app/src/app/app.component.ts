@@ -51,10 +51,10 @@ export class AppComponent implements OnInit {
   yourApiCall() {
     this.http.get('https://fakestosreapi.com/products/1')
       .pipe(
-        // catchError((error: any) => {
-        //   alert('error');
-        //   return of(null); // Emitting null to proceed to finalize
-        // }),
+        catchError((error: any) => {
+          alert('error');
+          return of(null); // Emitting null to proceed to finalize
+        }),
         finalize(() => {
           alert('final');
         })
