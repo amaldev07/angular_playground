@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { OnInit } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
 
 
 @Component({
@@ -21,11 +21,14 @@ export class AppComponent implements OnInit {
   }
   constructor(private http: HttpClient) {
     this.searchTerms.pipe(
+      // if input has more than 3 chars then only perform api call action
+      filter(x => x.length > 3),
       // Add a delay of 300ms between calls
       debounceTime(300),
       // Ignore if the next term is the same as the previous one
       distinctUntilChanged(),
-      // Switch to a new observable each time the term changes
+      /* Switch to a new observable each time the term changes, 
+      if htere is an exisitng api call present it will cancel the existing api call */
       switchMap((term: string) => this.searchApiCall(term))
     ).subscribe((result) => {
       // Handle the API call result here
