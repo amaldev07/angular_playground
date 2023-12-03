@@ -11,27 +11,16 @@ import { of } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   title = 'Sample title';
+  data = '';
   constructor(private http: HttpClient) { }
   ngOnInit() {
-
     this.yourApiCall();
   }
 
   yourApiCall() {
-    this.http.get('https://fakestosreapi.com/products/1')
-      .pipe(
-        catchError((error: any) => {
-          alert('error');
-          return of(null); // Emitting null to proceed to finalize
-        }),
-        finalize(() => {
-          alert('final');
-        })
-      )
+    this.http.get('https://fakestoreapi.com/products/1')
       .subscribe((response: any) => {
-        if (response !== null) {
-          alert('success');
-        }
+        this.data = response;
       });
   }
 
