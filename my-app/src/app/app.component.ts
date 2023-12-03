@@ -34,8 +34,8 @@ export class AppComponent implements OnInit {
       // Handle the API call result here
       console.log(result);
     });
-  }
-  
+  } 
+s
 
 
   // Function to push search terms into the subject
