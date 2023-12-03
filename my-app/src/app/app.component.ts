@@ -33,8 +33,9 @@ export class AppComponent implements OnInit {
     ).subscribe((result) => {
       // Handle the API call result here
       console.log(result);
-    }); 
+    });
   }
+  
 
 
   // Function to push search terms into the subject
