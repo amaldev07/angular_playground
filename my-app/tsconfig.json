@@ -30,6 +30,7 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
+  //added this
   "include": [
     "decs.d.ts"
   ]
