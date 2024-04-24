@@ -3,14 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CurrencyInputDirective } from './currency-input.directive';
+
+import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CurrencyInputDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
