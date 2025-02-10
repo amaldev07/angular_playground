@@ -10,7 +10,10 @@ import autoTable from 'jspdf-autotable'; // ✅ Import autoTable
 })
 export class AppComponent {
   title = 'my-app';
-
+  /* 
+    npm install jspdf jspdf-autotable
+    npm install jspdf jspdf-autotable
+  */
   // Sample data
   data = [
     { region: "Asia", country: "India", population: "1.4B" },
@@ -22,7 +25,7 @@ export class AppComponent {
 
   downloadPDF() {
     const doc = new jsPDF();
-    
+
     // Table headers
     const headers = [["Region", "Country", "Population"]];
 
