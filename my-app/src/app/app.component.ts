@@ -1292,9 +1292,9 @@ export class AppComponent {
       "population": 58717917
     }
   ];
-  sortedData:any =[];
+  sortedData: any = [];
 
-   
+
 
 
 
@@ -1302,9 +1302,9 @@ export class AppComponent {
     this.sortedData = [...this.data].sort((a, b) => a.region.localeCompare(b.region));
     debugger;
     let lastRegion = "";
-    const rows:any = [];
-    this.sortedData.forEach((item:any, index:any) => {
-      if (item.region === lastRegion && index%34 !== 0) {
+    const rows: any = [];
+    this.sortedData.forEach((item: any, index: any) => {
+      if (item.region === lastRegion && index % 34 !== 0) {
         rows.push([index + 1, "", item.country, item.population]); // Empty Region for merge effect
       } else {
         rows.push([index + 1, item.region, item.country, item.population]);
@@ -1312,17 +1312,23 @@ export class AppComponent {
       lastRegion = item.region;
     });
 
-
     const doc = new jsPDF();
 
-    // Table headers
+    const title = "Country Population Report";
+    doc.setFontSize(16); // Set font size
+    doc.text(title, 105, 15, { align: "center" });
+
     const headers = [["id", "Region", "Country", "Population"]];
 
     // Convert data to table rows
     // const rows = this.sortedData.map((item:any, id:any) => [id + 1, item.region, item.country, item.population]);
 
     // ✅ Call autoTable correctly
-    autoTable(doc, { head: headers, body: rows });
+    autoTable(doc, {
+      head: headers,
+      body: rows,
+      startY: 25 // Moves table down to prevent overlap with the title
+    });
 
     // Save PDF
     doc.save("data.pdf");
