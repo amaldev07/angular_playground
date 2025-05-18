@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InterviewPrepComponent } from './interview-prep/interview-prep.component';
 import { HomeComponent } from './home/home.component';
+import { PdfcanvasdownloadComponent } from './pdfcanvasdownload/pdfcanvasdownload.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InterviewPrepComponent,
-    HomeComponent
+    HomeComponent,
+    PdfcanvasdownloadComponent
   ],
   imports: [
     BrowserModule,
