@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { InterviewPrepComponent } from './interview-prep/interview-prep.component';
 import { HomeComponent } from './home/home.component';
 import { PdfcanvasdownloadComponent } from './pdfcanvasdownload/pdfcanvasdownload.component';
+import { RedirectToThisPageComponent } from './redirect-to-this-page/redirect-to-this-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InterviewPrepComponent,
     HomeComponent,
-    PdfcanvasdownloadComponent
+    PdfcanvasdownloadComponent,
+    RedirectToThisPageComponent
   ],
   imports: [
     BrowserModule,
