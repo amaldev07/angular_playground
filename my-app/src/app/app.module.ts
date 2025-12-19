@@ -7,6 +7,8 @@ import { InterviewPrepComponent } from './interview-prep/interview-prep.componen
 import { HomeComponent } from './home/home.component';
 import { PdfcanvasdownloadComponent } from './pdfcanvasdownload/pdfcanvasdownload.component';
 import { RedirectToThisPageComponent } from './redirect-to-this-page/redirect-to-this-page.component';
+import { ExampleTableComponent } from './example-table/example-table.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { RedirectToThisPageComponent } from './redirect-to-this-page/redirect-to
     InterviewPrepComponent,
     HomeComponent,
     PdfcanvasdownloadComponent,
-    RedirectToThisPageComponent
+    RedirectToThisPageComponent,
+    ExampleTableComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatTableModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
