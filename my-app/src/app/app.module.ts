@@ -9,6 +9,11 @@ import { PdfcanvasdownloadComponent } from './pdfcanvasdownload/pdfcanvasdownloa
 import { RedirectToThisPageComponent } from './redirect-to-this-page/redirect-to-this-page.component';
 import { ExampleTableComponent } from './example-table/example-table.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -22,9 +27,15 @@ import { MatTableModule } from '@angular/material/table';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatTableModule 
+    MatTableModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
