@@ -4,12 +4,14 @@ import { InterviewPrepComponent } from './interview-prep/interview-prep.componen
 import { HomeComponent } from './home/home.component'; // Import the HomeComponent
 import { PdfcanvasdownloadComponent } from './pdfcanvasdownload/pdfcanvasdownload.component';
 import { RedirectToThisPageComponent } from './redirect-to-this-page/redirect-to-this-page.component';
+import { CoursePathComponent } from './course-path/course-path.component';
 
 const routes: Routes = [
   { path: 'interview-prep', component: InterviewPrepComponent },
   { path: 'home', component: HomeComponent }, // Add route for HomeComponent
   { path: 'redirect', component: RedirectToThisPageComponent }, // Add route for HomeComponent
   { path: 'pdf-cancvas-donload', component: PdfcanvasdownloadComponent }, // Add route for HomeComponent
+  { path: 'course-path', component: CoursePathComponent }, // Add route for HomeComponent
   { path: '', redirectTo: '/home', pathMatch: 'full' }  // Optional: add a default route
 ];
 

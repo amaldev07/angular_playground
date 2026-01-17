@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { CoursePathComponent } from './course-path.component';
+
+describe('CoursePathComponent', () => {
+  let component: CoursePathComponent;
+  let fixture: ComponentFixture<CoursePathComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [CoursePathComponent]
+    });
+    fixture = TestBed.createComponent(CoursePathComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

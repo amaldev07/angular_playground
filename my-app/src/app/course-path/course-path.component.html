@@ -1,0 +1,45 @@
+<div class="container">
+  <h2>Learning Path</h2>
+
+  <p class="sub">
+    Complete prerequisites to unlock modules.
+    <ng-container *ngIf="nextUnlocked() as next; else done">
+      Next unlocked: <b>{{ next }}</b>
+    </ng-container>
+    <ng-template #done>🎉 Everything unlocked/completed!</ng-template>
+  </p>
+
+  <div class="path">
+    <div class="line"></div>
+
+    <div class="list">
+      <div class="item" *ngFor="let course of courseOrder" [ngClass]="getStatus(course)">
+        <div class="dot" [ngClass]="dotClass(course)"></div>
+
+        <div class="tile" (click)="openCourse(course)">
+          <div class="left">
+            <span class="icon">{{ icon(course) }}</span>
+
+            <div class="text">
+              <div class="name">{{ course }}</div>
+              <div class="req">{{ prereqText(course) }}</div>
+            </div>
+          </div>
+
+          <button
+            class="btn"
+            (click)="$event.stopPropagation(); toggleComplete(course)"
+            [disabled]="getStatus(course) === 'locked'"
+            [title]="getStatus(course) === 'locked' ? 'Complete prerequisites first' : 'Toggle completion'"
+          >
+            {{ completed.has(course) ? 'Undo' : 'Complete' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Completed: <b>{{ completedText() }}</b>
+  </div>
+</div>
