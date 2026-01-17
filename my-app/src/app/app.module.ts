@@ -7,6 +7,7 @@ import { InterviewPrepComponent } from './interview-prep/interview-prep.componen
 import { HomeComponent } from './home/home.component';
 import { PdfcanvasdownloadComponent } from './pdfcanvasdownload/pdfcanvasdownload.component';
 import { RedirectToThisPageComponent } from './redirect-to-this-page/redirect-to-this-page.component';
+import { CoursePathComponent } from './course-path/course-path.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { RedirectToThisPageComponent } from './redirect-to-this-page/redirect-to
     InterviewPrepComponent,
     HomeComponent,
     PdfcanvasdownloadComponent,
-    RedirectToThisPageComponent
+    RedirectToThisPageComponent,
+    CoursePathComponent
   ],
   imports: [
     BrowserModule,
